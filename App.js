@@ -1,14 +1,13 @@
-import React, {Component} from 'react';
-import {StatusBar} from 'react-native';
+import React from 'react';
 import {Root} from 'native-base';
 import Meteor from 'react-native-meteor';
 import {appConfig} from './imports/config/config.inc';
 import {Routers} from './imports/config/Routers';
 import Expo from 'expo';
 
-//Meteor.connect(appConfig.socketServer);
+Meteor.connect(appConfig.socketServer);
 
-export default class App extends Component {
+export default class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {loading: true};

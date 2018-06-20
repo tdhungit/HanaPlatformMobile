@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {
     Container, Content,
     Button,
@@ -7,7 +7,7 @@ import {
 } from 'native-base';
 import {Ionicons} from '@expo/vector-icons';
 
-export default class ViewHomePage extends Component {
+export default class ViewHomePage extends React.Component {
     static navigationOptions = {
         title: 'Home',
     };
