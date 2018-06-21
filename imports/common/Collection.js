@@ -44,11 +44,23 @@ class CollectionCore {
     /**
      * filter data
      * @param filters
+     * @param options
      * @returns {*|number|T}
      */
-    find(filters = {}) {
-        const options = this.filterOwnerData(filters, 'List');
-        return this.collection.find(options);
+    find(filters = {}, options = {}) {
+        const selector = this.filterOwnerData(filters, 'List');
+        return this.collection.find(selector, options);
+    }
+
+    /**
+     * get one record
+     * @param filters
+     * @param options
+     * @returns {*}
+     */
+    findOne(filters = {}, options = {}) {
+        const selector = this.filterOwnerData(filters, 'View');
+        return this.collection.findOne(selector, options);
     }
 }
 

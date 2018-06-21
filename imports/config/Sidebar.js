@@ -25,12 +25,17 @@ const sidebars = [
     {
         routeName: 'Dashboard',
         label: 'Dashboard',
-        icon: 'home',
+        icon: 'pie-chart',
+    },
+    {
+        routeName: 'Profile',
+        label: 'Profile',
+        icon: 'user',
     },
     {
         routeName: 'Login',
         label: 'Login',
-        icon: 'home',
+        icon: 'user-secret',
     },
 ];
 
@@ -47,7 +52,9 @@ class Sidebar extends React.Component {
                                           icon
                                           onPress={() => this.props.navigation.navigate(route.routeName)}>
                                     <Left>
-                                        <Icon name={route.icon} style={{fontSize: 20, color: '#000000'}}/>
+                                        <Icon type="FontAwesome"
+                                              name={route.icon}
+                                              style={{fontSize: 22, color: '#000000'}}/>
                                     </Left>
                                     <Body>
                                         <Text style={{color: '#000000'}}>{route.label}</Text>
