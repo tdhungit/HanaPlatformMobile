@@ -23,6 +23,7 @@ export default class ViewHomePage extends React.Component {
                     </Card>
 
                     <Button block
+                            title={'Login'}
                             onPress={() => this.props.navigation.navigate('Login')}>
                         <Ionicons name="md-checkmark-circle" size={32} color="green"/>
                         <Text>Login</Text>

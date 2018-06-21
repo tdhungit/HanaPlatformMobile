@@ -2,7 +2,7 @@ import React from 'react';
 import {Root} from 'native-base';
 import Meteor from 'react-native-meteor';
 import {appConfig} from './imports/config/config.inc';
-import {Routers} from './imports/config/Routers';
+import {AppDrawer} from './imports/config/Sidebar';
 import Expo from 'expo';
 
 Meteor.connect(appConfig.socketServer);
@@ -30,16 +30,8 @@ export default class App extends React.Component {
 
         return (
             <Root>
-                <Routers/>
+                <AppDrawer/>
             </Root>
         );
     }
 }
-
-// export default withTracker(params => {
-//     Meteor.subscribe('companies.list');
-//
-//     return {
-//         companies: Companies.find({})
-//     };
-// })(App);
