@@ -12,6 +12,7 @@ import ViewHomePage from '../ui/pages/index/ViewHomePage';
 import ViewLogin from '../ui/pages/index/ViewLogin';
 import ViewDashboard from '../ui/pages/dashboard/ViewDashboard';
 import ViewProfile from '../ui/pages/users/ViewProfile';
+import ViewCalendar from '../ui/pages/activities/ViewCalendar';
 
 class HeaderLeft extends React.Component {
     render() {
@@ -35,6 +36,7 @@ export const Routers = createStackNavigator(
         Login: ViewLogin,
         Dashboard: ViewDashboard,
         Profile: ViewProfile,
+        Calendar: ViewCalendar
     },
     {
         initialRouteName: 'HomePage',

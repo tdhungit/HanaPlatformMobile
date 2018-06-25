@@ -28,6 +28,11 @@ const sidebars = [
         icon: 'pie-chart',
     },
     {
+        routeName: 'Calendar',
+        label: 'Calendar',
+        icon: 'calendar',
+    },
+    {
         routeName: 'Profile',
         label: 'Profile',
         icon: 'user',
@@ -54,7 +59,7 @@ class Sidebar extends React.Component {
                                     <Left>
                                         <Icon type="FontAwesome"
                                               name={route.icon}
-                                              style={{fontSize: 22, color: '#000000'}}/>
+                                              style={{fontSize: 22, color: '#333333'}}/>
                                     </Left>
                                     <Body>
                                         <Text style={{color: '#000000'}}>{route.label}</Text>

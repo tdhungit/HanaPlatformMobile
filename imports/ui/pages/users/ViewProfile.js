@@ -7,7 +7,7 @@ import Meteor, {withTracker} from 'react-native-meteor';
 import {ListItemIcon} from '../../components/helpers/ListHelpers';
 import {Companies} from '../../../common/collections';
 
-class ViewProfile extends React.Component {
+class ViewProfileComponent extends React.Component {
     componentWillMount() {
         const user = Meteor.user();
         if (!user || !user._id) {
@@ -48,16 +48,16 @@ class ViewProfile extends React.Component {
     }
 }
 
-const component = withTracker((params) => {
+const ViewProfile = withTracker((params) => {
     Meteor.subscribe('companies.detail', Meteor.user().companyId);
 
     return {
         company: Companies.findOne(Meteor.user().companyId)
     };
-})(ViewProfile);
+})(ViewProfileComponent);
 
-component.navigationOptions = {
+ViewProfile.navigationOptions = {
     title: 'Profile'
 };
 
-export default component;
+export default ViewProfile;

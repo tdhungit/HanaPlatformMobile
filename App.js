@@ -4,8 +4,31 @@ import Meteor from 'react-native-meteor';
 import {appConfig} from './imports/config/config.inc';
 import {AppDrawer} from './imports/config/Sidebar';
 import Expo from 'expo';
+import {Provider, connect} from 'react-redux'
+import {store} from './imports/ui/store';
+import {appSetVar} from './imports/ui/store/app/app.actions';
 
 Meteor.connect(appConfig.socketServer);
+
+class AppRootComponent extends React.Component {
+    render() {
+        return (
+            <Root>
+                <AppDrawer screenProps={this.props}/>
+            </Root>
+        );
+    }
+}
+
+const mapStateToProps = (state) => {
+    return {app: state.app}
+};
+
+const mapDispatchToProps = {
+    appSetVar
+};
+
+const AppRoot = connect(mapStateToProps, mapDispatchToProps)(AppRootComponent);
 
 export default class App extends React.Component {
     constructor(props) {
@@ -30,9 +53,9 @@ export default class App extends React.Component {
         }
 
         return (
-            <Root>
-                <AppDrawer/>
-            </Root>
+            <Provider store={store}>
+                <AppRoot/>
+            </Provider>
         );
     }
 }
